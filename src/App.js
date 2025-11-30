@@ -18,15 +18,19 @@ import UseEffect from './component/layout/UseEffect';
 import API_UseEffect from './component/layout/API_UseEffect';
 import EventLister from './component/layout/EventLister';
 import ParentAPI from './component/layout/ParentAPI';
+import { UserContextProvider } from './component/context/ContextAPI/user-context-provider';
  function App() {
    
   const[comm_mess,setComm_Mess] = useState('commnication bw component')
 
   return (
+    
     <div>
-      <Header />
-      <Routes> 
+      <UserContextProvider>
+      <Header />      
+       <Routes> 
         <Route path = '/' element = {<Base />} />
+        <Route path = '/' element = {<Base />} /> 
         <Route path = '/about' element = {<About />} />
         <Route path = '/brand' element = {<Brand />} />
         <Route path = '/variable_update' element = { <VariableUpdate/>}></Route>
@@ -38,9 +42,11 @@ import ParentAPI from './component/layout/ParentAPI';
         <Route path = '/api' element = {<API_UseEffect/>}></Route> 
         <Route path = '/eventListner' element = {<EventLister/>}></Route>  
         <Route path = '/parentapi' element = {<ParentAPI/>}></Route>
-      </Routes>
+      </Routes>       
       <Footer />
-    </div>
+      </UserContextProvider>
+      </div>
+     
      
   );
 }
