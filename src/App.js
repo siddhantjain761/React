@@ -19,35 +19,36 @@ import API_UseEffect from './component/layout/API_UseEffect';
 import EventLister from './component/layout/EventLister';
 import ParentAPI from './component/layout/ParentAPI';
 import { UserContextProvider } from './component/context/ContextAPI/user-context-provider';
- function App() {
-   
-  const[comm_mess,setComm_Mess] = useState('commnication bw component')
+import ToDoList from './component/toDoList/ToDoList';
+function App() {
+
+  const [comm_mess, setComm_Mess] = useState('commnication bw component')
 
   return (
-    
+
     <div>
       <UserContextProvider>
-      <Header />      
-       <Routes> 
-        <Route path = '/' element = {<Base />} />
-        <Route path = '/' element = {<Base />} /> 
-        <Route path = '/about' element = {<About />} />
-        <Route path = '/brand' element = {<Brand />} />
-        <Route path = '/variable_update' element = { <VariableUpdate/>}></Route>
-        <Route path = '/state' element = {<State/>}></Route>
-        <Route path = '/props' element = {<Propsuse message = {comm_mess} />}></Route>
-        <Route path = '/button' element = {<HiddenAndToggle/>}></Route>
-        <Route path = '/form' element = {<Form/>}></Route>
-        <Route path = '/useEffect' element = {<UseEffect/>}></Route>   
-        <Route path = '/api' element = {<API_UseEffect/>}></Route> 
-        <Route path = '/eventListner' element = {<EventLister/>}></Route>  
-        <Route path = '/parentapi' element = {<ParentAPI/>}></Route>
-      </Routes>       
-      <Footer />
+        <Header />
+        <Routes>
+          <Route path='/' element={<ToDoList />} />
+          <Route path='/base' element={<Base />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/brand' element={<Brand />} />
+          <Route path='/variable_update' element={<VariableUpdate />}></Route>
+          <Route path='/state' element={<State />}></Route>
+          <Route path='/props' element={<Propsuse message={comm_mess} />}></Route>
+          <Route path='/button' element={<HiddenAndToggle />}></Route>
+          <Route path='/form' element={<Form />}></Route>
+          <Route path='/useEffect' element={<UseEffect />}></Route>
+          <Route path='/api' element={<API_UseEffect />}></Route>
+          <Route path='/eventListner' element={<EventLister />}></Route>
+          <Route path='/parentapi' element={<ParentAPI />}></Route>
+        </Routes>
+        <Footer />
       </UserContextProvider>
-      </div>
-     
-     
+    </div>
+
+
   );
 }
 

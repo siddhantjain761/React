@@ -76,3 +76,10 @@ For react router dom install 'npm i react-router-dom'
 ### To use Axios in your React application you first need to install it. You can install Axios by running the following command in your terminal:
 
 npm install axios
+
+
+### install redux
+npm install redux react-redux --save
+
+### install redux toll kit
+npm install @reduxjs/toolkit react-redux

@@ -1,17 +1,14 @@
 import { create } from "zustand";
 
-// custome hook
-// npm i zustand
-
-const useUserStore = create((Set)={
-    user:null,
-    login: () => 
-        Set({
-            user: {name : "jhon" , email : "jhon@gmail.com"}
+const useUserStore = create((set) => ({
+    user: null,
+    login: () =>
+        set({
+            user: { name: "john", email: "john@gmail.com" }
         }),
     logout: () =>
-        Set({user : null})    
+        set({ user: null })
+}));
 
-})
-
-export default useUserStore
+export default useUserStore;
+    
